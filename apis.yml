@@ -1,0 +1,36 @@
+aid: apache-pinot
+name: Apache Pinot
+description: >-
+  Apache Pinot is a real-time distributed OLAP datastore designed to deliver scalable real-time analytics with low latency. It ingests data from batch and streaming sources and provides fast analytical queries for user-facing applications.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Analytics
+  - OLAP
+  - Real-Time
+  - Database
+  - Low Latency
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-pinot:apache-pinot-rest-api
+    name: Apache Pinot REST API
+    description: >-
+      The Pinot API provides REST endpoints for SQL queries, schema management, table management, segment management, cluster administration, and task management, along with a JDBC driver for SQL access.
+    humanURL: https://docs.pinot.apache.org/
+    tags:
+      - REST
+      - SQL
+      - OLAP
+      - Analytics
+    properties:
+      - type: Documentation
+        url: https://docs.pinot.apache.org/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
