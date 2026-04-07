@@ -8,10 +8,10 @@ access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Analytics
-  - OLAP
-  - Real-Time
   - Database
   - Low Latency
+  - OLAP
+  - Real-Time
 created: '2026-03-16'
 modified: '2026-03-16'
 url: >-
@@ -24,10 +24,10 @@ apis:
       The Pinot API provides REST endpoints for SQL queries, schema management, table management, segment management, cluster administration, and task management, along with a JDBC driver for SQL access.
     humanURL: https://docs.pinot.apache.org/
     tags:
+      - Analytics
+      - OLAP
       - REST
       - SQL
-      - OLAP
-      - Analytics
     properties:
       - type: Documentation
         url: https://docs.pinot.apache.org/
