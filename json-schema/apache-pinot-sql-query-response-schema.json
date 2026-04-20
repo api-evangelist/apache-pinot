@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-sql-query-response-schema.json",
+  "title": "SqlQueryResponse",
+  "description": "SqlQueryResponse schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "resultTable": {
+      "$ref": "#/components/schemas/ResultTable"
+    },
+    "numDocsScanned": {
+      "type": "integer",
+      "example": 1000
+    },
+    "totalDocs": {
+      "type": "integer",
+      "example": 10000
+    },
+    "timeUsedMs": {
+      "type": "integer",
+      "example": 45
+    },
+    "numServersQueried": {
+      "type": "integer",
+      "example": 4
+    },
+    "numServersResponded": {
+      "type": "integer",
+      "example": 4
+    }
+  }
+}

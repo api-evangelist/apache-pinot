@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-table-list-schema.json",
+  "title": "TableList",
+  "description": "TableList schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "tables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "airlineStats_OFFLINE",
+        "baseballStats_OFFLINE"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-sql-query-request-structure.json",
+  "description": "SqlQueryRequest schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "sql": {
+      "type": "string",
+      "description": "SQL query to execute",
+      "example": "SELECT COUNT(*) FROM airlineStats WHERE Year = 2014"
+    },
+    "queryOptions": {
+      "type": "string",
+      "description": "Query options key=value pairs",
+      "example": "timeoutMs=5000"
+    }
+  },
+  "required": [
+    "sql"
+  ],
+  "name": "SqlQueryRequest"
+}

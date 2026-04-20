@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-field-spec-schema.json",
+  "title": "FieldSpec",
+  "description": "FieldSpec schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "example": "AirlineID"
+    },
+    "dataType": {
+      "type": "string",
+      "enum": [
+        "INT",
+        "LONG",
+        "FLOAT",
+        "DOUBLE",
+        "STRING",
+        "BYTES",
+        "BOOLEAN",
+        "TIMESTAMP",
+        "JSON"
+      ],
+      "example": "INT"
+    },
+    "notNull": {
+      "type": "boolean",
+      "example": false
+    }
+  }
+}

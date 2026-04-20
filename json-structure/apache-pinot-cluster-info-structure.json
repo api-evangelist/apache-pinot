@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-cluster-info-structure.json",
+  "description": "ClusterInfo schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "clusterName": {
+      "type": "string",
+      "example": "PinotCluster"
+    },
+    "version": {
+      "type": "string",
+      "example": "1.0.0"
+    },
+    "numOnlineControllers": {
+      "type": "int32",
+      "example": 1
+    },
+    "numOnlineBrokers": {
+      "type": "int32",
+      "example": 2
+    },
+    "numOnlineServers": {
+      "type": "int32",
+      "example": 4
+    }
+  },
+  "name": "ClusterInfo"
+}

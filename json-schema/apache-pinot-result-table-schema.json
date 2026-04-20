@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-result-table-schema.json",
+  "title": "ResultTable",
+  "description": "ResultTable schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "dataSchema": {
+      "$ref": "#/components/schemas/DataSchema"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {}
+      }
+    }
+  }
+}

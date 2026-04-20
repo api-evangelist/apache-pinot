@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-instance-list-schema.json",
+  "title": "InstanceList",
+  "description": "InstanceList schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "instances": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "Broker_localhost_8099",
+        "Server_localhost_8098"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-data-schema-structure.json",
+  "description": "DataSchema schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "columnNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "count(*)"
+      ]
+    },
+    "columnDataTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "LONG"
+      ]
+    }
+  },
+  "name": "DataSchema"
+}

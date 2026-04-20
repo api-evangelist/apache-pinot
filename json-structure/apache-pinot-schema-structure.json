@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-schema-structure.json",
+  "description": "Schema schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "schemaName": {
+      "type": "string",
+      "example": "airlineStats"
+    },
+    "dimensionFieldSpecs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/FieldSpec"
+      }
+    },
+    "metricFieldSpecs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/FieldSpec"
+      }
+    },
+    "dateTimeFieldSpecs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/FieldSpec"
+      }
+    }
+  },
+  "name": "Schema"
+}

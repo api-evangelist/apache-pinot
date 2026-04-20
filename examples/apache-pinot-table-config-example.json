@@ -1,0 +1,12 @@
+{
+  "tableName": "example-name",
+  "tableType": "OFFLINE",
+  "segmentsConfig": {
+    "replication": "example",
+    "timeColumnName": "example-name"
+  },
+  "tenants": {
+    "broker": "example",
+    "server": "example"
+  }
+}

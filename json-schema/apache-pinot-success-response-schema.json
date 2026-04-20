@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-success-response-schema.json",
+  "title": "SuccessResponse",
+  "description": "SuccessResponse schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "example": "success"
+    },
+    "message": {
+      "type": "string",
+      "example": "Table created successfully"
+    }
+  }
+}

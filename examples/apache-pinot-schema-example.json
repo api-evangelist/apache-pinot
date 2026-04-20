@@ -1,0 +1,12 @@
+{
+  "schemaName": "example-name",
+  "dimensionFieldSpecs": [
+    {}
+  ],
+  "metricFieldSpecs": [
+    {}
+  ],
+  "dateTimeFieldSpecs": [
+    {}
+  ]
+}

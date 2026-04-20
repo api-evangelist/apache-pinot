@@ -1,0 +1,7 @@
+{
+  "clusterName": "example-name",
+  "version": "example",
+  "numOnlineControllers": 1234,
+  "numOnlineBrokers": 1234,
+  "numOnlineServers": 1234
+}

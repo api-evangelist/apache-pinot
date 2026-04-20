@@ -1,0 +1,387 @@
+openapi: 3.0.3
+info:
+  title: Apache Pinot REST API
+  description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pinot.apache.org/
+x-generated-from: documentation
+servers:
+  - url: https://{host}
+    variables:
+      host:
+        default: localhost:9000
+paths:
+  /query/sql:
+    post:
+      operationId: querySql
+      summary: Apache Pinot Query SQL
+      description: Execute a SQL query against Pinot tables.
+      tags: [Queries]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SqlQueryRequest'
+      responses:
+        '200':
+          description: Query results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlQueryResponse'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /tables:
+    get:
+      operationId: listTables
+      summary: Apache Pinot List Tables
+      description: List all tables in the Pinot cluster.
+      tags: [Tables]
+      responses:
+        '200':
+          description: List of tables
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableList'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+    post:
+      operationId: createTable
+      summary: Apache Pinot Create Table
+      description: Create a new Pinot table with the specified configuration.
+      tags: [Tables]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TableConfig'
+      responses:
+        '200':
+          description: Table created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /tables/{tableName}:
+    get:
+      operationId: getTable
+      summary: Apache Pinot Get Table
+      description: Get the configuration of a specific table.
+      tags: [Tables]
+      parameters:
+        - $ref: '#/components/parameters/tableName'
+      responses:
+        '200':
+          description: Table configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableConfig'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+    delete:
+      operationId: deleteTable
+      summary: Apache Pinot Delete Table
+      description: Delete a table from the cluster.
+      tags: [Tables]
+      parameters:
+        - $ref: '#/components/parameters/tableName'
+      responses:
+        '200':
+          description: Table deleted
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /schemas:
+    get:
+      operationId: listSchemas
+      summary: Apache Pinot List Schemas
+      description: List all schemas registered in the cluster.
+      tags: [Schemas]
+      responses:
+        '200':
+          description: List of schema names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+    post:
+      operationId: addSchema
+      summary: Apache Pinot Add Schema
+      description: Add a new schema to the cluster.
+      tags: [Schemas]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Schema'
+      responses:
+        '200':
+          description: Schema added
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /schemas/{schemaName}:
+    get:
+      operationId: getSchema
+      summary: Apache Pinot Get Schema
+      description: Get a specific schema by name.
+      tags: [Schemas]
+      parameters:
+        - name: schemaName
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Schema name
+          example: my_schema
+      responses:
+        '200':
+          description: Schema definition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+    delete:
+      operationId: deleteSchema
+      summary: Apache Pinot Delete Schema
+      description: Delete a schema from the cluster.
+      tags: [Schemas]
+      parameters:
+        - name: schemaName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Schema deleted
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /segments/{tableName}:
+    get:
+      operationId: listSegments
+      summary: Apache Pinot List Segments
+      description: List all segments for a table.
+      tags: [Segments]
+      parameters:
+        - $ref: '#/components/parameters/tableName'
+      responses:
+        '200':
+          description: List of segments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SegmentList'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /cluster/info:
+    get:
+      operationId: getClusterInfo
+      summary: Apache Pinot Get Cluster Info
+      description: Get information about the Pinot cluster.
+      tags: [Cluster]
+      responses:
+        '200':
+          description: Cluster information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterInfo'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+  /instances:
+    get:
+      operationId: listInstances
+      summary: Apache Pinot List Instances
+      description: List all instances in the cluster.
+      tags: [Cluster]
+      responses:
+        '200':
+          description: List of instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstanceList'
+      x-microcks-operation: {delay: 0, dispatcher: FALLBACK}
+components:
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
+  schemas:
+    SqlQueryRequest:
+      type: object
+      required: [sql]
+      properties:
+        sql:
+          type: string
+          description: SQL query to execute
+          example: "SELECT COUNT(*) FROM airlineStats WHERE Year = 2014"
+        queryOptions:
+          type: string
+          description: Query options key=value pairs
+          example: timeoutMs=5000
+    SqlQueryResponse:
+      type: object
+      properties:
+        resultTable:
+          $ref: '#/components/schemas/ResultTable'
+        numDocsScanned:
+          type: integer
+          example: 1000
+        totalDocs:
+          type: integer
+          example: 10000
+        timeUsedMs:
+          type: integer
+          example: 45
+        numServersQueried:
+          type: integer
+          example: 4
+        numServersResponded:
+          type: integer
+          example: 4
+    ResultTable:
+      type: object
+      properties:
+        dataSchema:
+          $ref: '#/components/schemas/DataSchema'
+        rows:
+          type: array
+          items:
+            type: array
+            items: {}
+    DataSchema:
+      type: object
+      properties:
+        columnNames:
+          type: array
+          items:
+            type: string
+          example: ["count(*)"]
+        columnDataTypes:
+          type: array
+          items:
+            type: string
+          example: ["LONG"]
+    TableList:
+      type: object
+      properties:
+        tables:
+          type: array
+          items:
+            type: string
+          example: ["airlineStats_OFFLINE", "baseballStats_OFFLINE"]
+    TableConfig:
+      type: object
+      properties:
+        tableName:
+          type: string
+          example: myTable
+        tableType:
+          type: string
+          enum: [OFFLINE, REALTIME]
+          example: OFFLINE
+        segmentsConfig:
+          type: object
+          properties:
+            replication:
+              type: string
+              example: "1"
+            timeColumnName:
+              type: string
+        tenants:
+          type: object
+          properties:
+            broker:
+              type: string
+              example: DefaultTenant
+            server:
+              type: string
+              example: DefaultTenant
+    Schema:
+      type: object
+      properties:
+        schemaName:
+          type: string
+          example: airlineStats
+        dimensionFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+        metricFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+        dateTimeFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+    FieldSpec:
+      type: object
+      properties:
+        name:
+          type: string
+          example: AirlineID
+        dataType:
+          type: string
+          enum: [INT, LONG, FLOAT, DOUBLE, STRING, BYTES, BOOLEAN, TIMESTAMP, JSON]
+          example: INT
+        notNull:
+          type: boolean
+          example: false
+    SegmentList:
+      type: object
+      properties:
+        OFFLINE:
+          type: array
+          items:
+            type: string
+        REALTIME:
+          type: array
+          items:
+            type: string
+    ClusterInfo:
+      type: object
+      properties:
+        clusterName:
+          type: string
+          example: PinotCluster
+        version:
+          type: string
+          example: 1.0.0
+        numOnlineControllers:
+          type: integer
+          example: 1
+        numOnlineBrokers:
+          type: integer
+          example: 2
+        numOnlineServers:
+          type: integer
+          example: 4
+    InstanceList:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            type: string
+          example: ["Broker_localhost_8099", "Server_localhost_8098"]
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Table created successfully

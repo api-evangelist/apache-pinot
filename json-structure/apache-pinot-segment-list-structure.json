@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-segment-list-structure.json",
+  "description": "SegmentList schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "OFFLINE": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "REALTIME": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "name": "SegmentList"
+}

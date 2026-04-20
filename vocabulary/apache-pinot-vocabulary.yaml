@@ -1,0 +1,68 @@
+vocabulary: "1.0.0"
+info:
+  provider: "Apache Pinot"
+  description: "Vocabulary for Apache Pinot real-time OLAP analytics REST API"
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: pinot
+      version: "1.0.0"
+      baseUrl: "https://localhost:9000"
+      status: active
+  resources:
+    - name: queries
+      api: pinot
+      actions: [execute]
+    - name: tables
+      api: pinot
+      actions: [list, create, get, delete]
+    - name: schemas
+      api: pinot
+      actions: [list, add, get, delete]
+    - name: segments
+      api: pinot
+      actions: [list, upload, delete]
+    - name: cluster
+      api: pinot
+      actions: [info, instances]
+  actions:
+    - name: execute
+      httpMethod: POST
+      pattern: read
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+capability:
+  workflows:
+    - name: Analytics Workflow
+      file: capabilities/pinot-workflow.yaml
+      apis: [pinot]
+      tools: 8
+      personas: [Data Analyst, Platform Engineer]
+  personas:
+    - id: data-analyst
+      name: Data Analyst
+      description: "Queries Pinot for real-time analytics and dashboards"
+    - id: platform-engineer
+      name: Platform Engineer
+      description: "Manages Pinot cluster, tables, and schemas"
+  domains:
+    - Analytics
+    - Real-Time OLAP
+    - Distributed Databases
+crossReference:
+  - resource: queries
+    operations: [execute]
+    workflows: [Analytics Workflow]
+    personas: [Data Analyst]
+  - resource: tables
+    operations: [list, create]
+    workflows: [Analytics Workflow]
+    personas: [Platform Engineer]

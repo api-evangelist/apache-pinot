@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-success-response-structure.json",
+  "description": "SuccessResponse schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "example": "success"
+    },
+    "message": {
+      "type": "string",
+      "example": "Table created successfully"
+    }
+  },
+  "name": "SuccessResponse"
+}

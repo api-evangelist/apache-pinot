@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-result-table-structure.json",
+  "description": "ResultTable schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "dataSchema": {
+      "$ref": "#/components/schemas/DataSchema"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {}
+      }
+    }
+  },
+  "name": "ResultTable"
+}

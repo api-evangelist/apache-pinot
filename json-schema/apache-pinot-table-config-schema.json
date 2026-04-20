@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-schema/apache-pinot-table-config-schema.json",
+  "title": "TableConfig",
+  "description": "TableConfig schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "tableName": {
+      "type": "string",
+      "example": "myTable"
+    },
+    "tableType": {
+      "type": "string",
+      "enum": [
+        "OFFLINE",
+        "REALTIME"
+      ],
+      "example": "OFFLINE"
+    },
+    "segmentsConfig": {
+      "type": "object",
+      "properties": {
+        "replication": {
+          "type": "string",
+          "example": "1"
+        },
+        "timeColumnName": {
+          "type": "string"
+        }
+      }
+    },
+    "tenants": {
+      "type": "object",
+      "properties": {
+        "broker": {
+          "type": "string",
+          "example": "DefaultTenant"
+        },
+        "server": {
+          "type": "string",
+          "example": "DefaultTenant"
+        }
+      }
+    }
+  }
+}

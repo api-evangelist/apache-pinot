@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/json-structure/apache-pinot-sql-query-response-structure.json",
+  "description": "SqlQueryResponse schema from Apache Pinot",
+  "type": "object",
+  "properties": {
+    "resultTable": {
+      "$ref": "#/components/schemas/ResultTable"
+    },
+    "numDocsScanned": {
+      "type": "int32",
+      "example": 1000
+    },
+    "totalDocs": {
+      "type": "int32",
+      "example": 10000
+    },
+    "timeUsedMs": {
+      "type": "int32",
+      "example": 45
+    },
+    "numServersQueried": {
+      "type": "int32",
+      "example": 4
+    },
+    "numServersResponded": {
+      "type": "int32",
+      "example": 4
+    }
+  },
+  "name": "SqlQueryResponse"
+}

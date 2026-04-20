@@ -1,0 +1,142 @@
+naftiko: "1.0.0-alpha1"
+info:
+  label: "Apache Pinot Analytics Workflow"
+  description: "Workflow for executing real-time OLAP queries, managing schemas and tables, and monitoring the Pinot cluster."
+  tags:
+    - Apache Pinot
+    - Analytics
+    - Real-Time OLAP
+    - SQL
+  created: "2026-04-19"
+  modified: "2026-04-19"
+binds:
+  - namespace: env
+    keys:
+      PINOT_AUTH_TOKEN: PINOT_AUTH_TOKEN
+capability:
+  consumes:
+    - type: http
+      namespace: pinot
+      baseUri: https://localhost:9000
+      description: "Apache Pinot REST API"
+      resources:
+        - name: queries
+          path: /query/sql
+          description: "SQL query execution"
+          operations:
+            - name: querySql
+              method: POST
+              description: "Execute SQL query"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: tables
+          path: /tables
+          description: "Table management"
+          operations:
+            - name: listTables
+              method: GET
+              description: "List all tables"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: pinot-api
+      description: "Unified REST API for Pinot analytics."
+      resources:
+        - path: /v1/query
+          name: queries
+          operations:
+            - method: POST
+              name: query
+              description: "Execute SQL query"
+              call: "pinot.querySql"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/tables
+          name: tables
+          operations:
+            - method: GET
+              name: list-tables
+              description: "List tables"
+              call: "pinot.listTables"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+    - type: mcp
+      port: 9090
+      namespace: pinot-mcp
+      transport: http
+      description: "MCP server for AI-assisted Pinot analytics."
+      tools:
+        - name: query-sql
+          description: "Execute a SQL query against Pinot tables"
+          hints:
+            readOnly: true
+          call: "pinot.querySql"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-tables
+          description: "List all tables in the Pinot cluster"
+          hints:
+            readOnly: true
+          call: "pinot.listTables"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-table
+          description: "Get the configuration of a specific table"
+          hints:
+            readOnly: true
+          call: "pinot.getTable"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-table
+          description: "Create a new Pinot table"
+          hints:
+            readOnly: false
+          call: "pinot.createTable"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-schemas
+          description: "List all registered schemas"
+          hints:
+            readOnly: true
+          call: "pinot.listSchemas"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-schema
+          description: "Get a specific schema definition"
+          hints:
+            readOnly: true
+          call: "pinot.getSchema"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-segments
+          description: "List all segments for a table"
+          hints:
+            readOnly: true
+          call: "pinot.listSegments"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-cluster-info
+          description: "Get Pinot cluster status and information"
+          hints:
+            readOnly: true
+          call: "pinot.getClusterInfo"
+          outputParameters:
+            - type: object
+              mapping: "$."

@@ -1,0 +1,156 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "pino": "https://pinot.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "SqlQueryRequest": "pino:SqlQueryRequest",
+    "SqlQueryResponse": "pino:SqlQueryResponse",
+    "ResultTable": "pino:ResultTable",
+    "DataSchema": "pino:DataSchema",
+    "TableList": "pino:TableList",
+    "TableConfig": "pino:TableConfig",
+    "Schema": "pino:Schema",
+    "FieldSpec": "pino:FieldSpec",
+    "SegmentList": "pino:SegmentList",
+    "ClusterInfo": "pino:ClusterInfo",
+    "InstanceList": "pino:InstanceList",
+    "SuccessResponse": "pino:SuccessResponse",
+    "sql": {
+      "@id": "pino:sql",
+      "@type": "xsd:string"
+    },
+    "queryOptions": {
+      "@id": "pino:queryOptions",
+      "@type": "xsd:string"
+    },
+    "resultTable": {
+      "@id": "pino:resultTable",
+      "@type": "xsd:string"
+    },
+    "numDocsScanned": {
+      "@id": "pino:numDocsScanned",
+      "@type": "xsd:integer"
+    },
+    "totalDocs": {
+      "@id": "pino:totalDocs",
+      "@type": "xsd:integer"
+    },
+    "timeUsedMs": {
+      "@id": "pino:timeUsedMs",
+      "@type": "xsd:integer"
+    },
+    "numServersQueried": {
+      "@id": "pino:numServersQueried",
+      "@type": "xsd:integer"
+    },
+    "numServersResponded": {
+      "@id": "pino:numServersResponded",
+      "@type": "xsd:integer"
+    },
+    "dataSchema": {
+      "@id": "pino:dataSchema",
+      "@type": "xsd:string"
+    },
+    "rows": {
+      "@id": "pino:rows",
+      "@container": "@set"
+    },
+    "columnNames": {
+      "@id": "pino:columnNames",
+      "@container": "@set"
+    },
+    "columnDataTypes": {
+      "@id": "pino:columnDataTypes",
+      "@container": "@set"
+    },
+    "tables": {
+      "@id": "pino:tables",
+      "@container": "@set"
+    },
+    "tableName": {
+      "@id": "pino:tableName",
+      "@type": "xsd:string"
+    },
+    "tableType": {
+      "@id": "pino:tableType",
+      "@type": "xsd:string"
+    },
+    "segmentsConfig": {
+      "@id": "pino:segmentsConfig",
+      "@type": "xsd:string"
+    },
+    "tenants": {
+      "@id": "pino:tenants",
+      "@type": "xsd:string"
+    },
+    "schemaName": {
+      "@id": "pino:schemaName",
+      "@type": "xsd:string"
+    },
+    "dimensionFieldSpecs": {
+      "@id": "pino:dimensionFieldSpecs",
+      "@container": "@set"
+    },
+    "metricFieldSpecs": {
+      "@id": "pino:metricFieldSpecs",
+      "@container": "@set"
+    },
+    "dateTimeFieldSpecs": {
+      "@id": "pino:dateTimeFieldSpecs",
+      "@container": "@set"
+    },
+    "name": {
+      "@id": "pino:name",
+      "@type": "schema:name"
+    },
+    "dataType": {
+      "@id": "pino:dataType",
+      "@type": "xsd:string"
+    },
+    "notNull": {
+      "@id": "pino:notNull",
+      "@type": "xsd:boolean"
+    },
+    "OFFLINE": {
+      "@id": "pino:OFFLINE",
+      "@container": "@set"
+    },
+    "REALTIME": {
+      "@id": "pino:REALTIME",
+      "@container": "@set"
+    },
+    "clusterName": {
+      "@id": "pino:clusterName",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "pino:version",
+      "@type": "xsd:string"
+    },
+    "numOnlineControllers": {
+      "@id": "pino:numOnlineControllers",
+      "@type": "xsd:integer"
+    },
+    "numOnlineBrokers": {
+      "@id": "pino:numOnlineBrokers",
+      "@type": "xsd:integer"
+    },
+    "numOnlineServers": {
+      "@id": "pino:numOnlineServers",
+      "@type": "xsd:integer"
+    },
+    "instances": {
+      "@id": "pino:instances",
+      "@container": "@set"
+    },
+    "status": {
+      "@id": "pino:status",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "pino:message",
+      "@type": "xsd:string"
+    }
+  }
+}
