@@ -52,7 +52,7 @@ common:
   url: vocabulary/apache-pinot-vocabulary.yaml
 - type: NaftikoCapability
   url: capabilities/pinot-workflow.yaml
-- type: JSON-LD
+- type: JSONLD
   url: json-ld/apache-pinot-context.jsonld
 - type: Features
   data:
