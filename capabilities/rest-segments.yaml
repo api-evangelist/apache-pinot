@@ -1,0 +1,67 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Pinot REST API — Segments
+  description: 'Apache Pinot REST API — Segments. 1 operations. Lead operation: Apache Pinot List Segments. Self-contained
+    Naftiko capability covering one Apache Pinot business surface.'
+  tags:
+  - Apache Pinot
+  - Segments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_PINOT_API_KEY: APACHE_PINOT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-segments
+    baseUri: https://{host}
+    description: Apache Pinot REST API — Segments business capability. Self-contained, no shared references.
+    resources:
+    - name: segments-tableName
+      path: /segments/{tableName}
+      operations:
+      - name: listsegments
+        method: GET
+        description: Apache Pinot List Segments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: rest-segments-rest
+    port: 8080
+    description: REST adapter for Apache Pinot REST API — Segments. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/segments/{tablename}
+      name: segments-tablename
+      description: REST surface for segments-tableName.
+      operations:
+      - method: GET
+        name: listsegments
+        description: Apache Pinot List Segments
+        call: rest-segments.listsegments
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-segments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Pinot REST API — Segments. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: apache-pinot-list-segments
+      description: Apache Pinot List Segments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-segments.listsegments
+      outputParameters:
+      - type: object
+        mapping: $.

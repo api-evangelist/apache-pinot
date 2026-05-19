@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Pinot REST API — Queries
+  description: 'Apache Pinot REST API — Queries. 1 operations. Lead operation: Apache Pinot Query SQL. Self-contained Naftiko
+    capability covering one Apache Pinot business surface.'
+  tags:
+  - Apache Pinot
+  - Queries
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_PINOT_API_KEY: APACHE_PINOT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-queries
+    baseUri: https://{host}
+    description: Apache Pinot REST API — Queries business capability. Self-contained, no shared references.
+    resources:
+    - name: query-sql
+      path: /query/sql
+      operations:
+      - name: querysql
+        method: POST
+        description: Apache Pinot Query SQL
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: rest-queries-rest
+    port: 8080
+    description: REST adapter for Apache Pinot REST API — Queries. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/query/sql
+      name: query-sql
+      description: REST surface for query-sql.
+      operations:
+      - method: POST
+        name: querysql
+        description: Apache Pinot Query SQL
+        call: rest-queries.querysql
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-queries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Pinot REST API — Queries. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: apache-pinot-query-sql
+      description: Apache Pinot Query SQL
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: rest-queries.querysql
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
