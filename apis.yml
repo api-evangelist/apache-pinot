@@ -98,3 +98,5 @@ common:
     description: Federated query access to Pinot via Presto connector
   - name: Grafana
     description: Grafana data source plugin for Pinot metrics
+- type: LLMsTxt
+  url: https://docs.pinot.apache.org/llms.txt
