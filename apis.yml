@@ -36,15 +36,15 @@ apis:
     url: https://docs.pinot.apache.org/
   - type: OpenAPI
     url: openapi/apache-pinot-rest-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-cluster.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-queries.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-schemas.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-segments.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/rest-tables.yaml
 maintainers:
 - FN: Kin Lane
@@ -98,5 +98,5 @@ common:
     description: Federated query access to Pinot via Presto connector
   - name: Grafana
     description: Grafana data source plugin for Pinot metrics
-- type: LLMsTxt
+- type: LlmsText
   url: https://docs.pinot.apache.org/llms.txt
