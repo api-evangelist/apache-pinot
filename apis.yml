@@ -50,6 +50,10 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-pinot-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-pinot-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache/pinot
 - type: Documentation
