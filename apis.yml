@@ -50,6 +50,8 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: AgenticAccess
+  url: agentic-access/apache-pinot-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/apache-pinot-vulnerability-disclosure.yml
 - type: DomainSecurity
