@@ -1,0 +1,150 @@
+openapi: 3.0.3
+info:
+  title: Apache Pinot REST Cluster Tables API
+  description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pinot.apache.org/
+servers:
+- url: https://{host}
+  variables:
+    host:
+      default: localhost:9000
+tags:
+- name: Tables
+paths:
+  /tables:
+    get:
+      operationId: listTables
+      summary: Apache Pinot List Tables
+      description: List all tables in the Pinot cluster.
+      tags:
+      - Tables
+      responses:
+        '200':
+          description: List of tables
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: createTable
+      summary: Apache Pinot Create Table
+      description: Create a new Pinot table with the specified configuration.
+      tags:
+      - Tables
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TableConfig'
+      responses:
+        '200':
+          description: Table created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /tables/{tableName}:
+    get:
+      operationId: getTable
+      summary: Apache Pinot Get Table
+      description: Get the configuration of a specific table.
+      tags:
+      - Tables
+      parameters:
+      - $ref: '#/components/parameters/tableName'
+      responses:
+        '200':
+          description: Table configuration
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableConfig'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteTable
+      summary: Apache Pinot Delete Table
+      description: Delete a table from the cluster.
+      tags:
+      - Tables
+      parameters:
+      - $ref: '#/components/parameters/tableName'
+      responses:
+        '200':
+          description: Table deleted
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Table created successfully
+    TableConfig:
+      type: object
+      properties:
+        tableName:
+          type: string
+          example: myTable
+        tableType:
+          type: string
+          enum:
+          - OFFLINE
+          - REALTIME
+          example: OFFLINE
+        segmentsConfig:
+          type: object
+          properties:
+            replication:
+              type: string
+              example: '1'
+            timeColumnName:
+              type: string
+        tenants:
+          type: object
+          properties:
+            broker:
+              type: string
+              example: DefaultTenant
+            server:
+              type: string
+              example: DefaultTenant
+    TableList:
+      type: object
+      properties:
+        tables:
+          type: array
+          items:
+            type: string
+          example:
+          - airlineStats_OFFLINE
+          - baseballStats_OFFLINE
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
+x-generated-from: documentation

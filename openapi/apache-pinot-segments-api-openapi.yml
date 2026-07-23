@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  title: Apache Pinot REST Cluster Segments API
+  description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pinot.apache.org/
+servers:
+- url: https://{host}
+  variables:
+    host:
+      default: localhost:9000
+tags:
+- name: Segments
+paths:
+  /segments/{tableName}:
+    get:
+      operationId: listSegments
+      summary: Apache Pinot List Segments
+      description: List all segments for a table.
+      tags:
+      - Segments
+      parameters:
+      - $ref: '#/components/parameters/tableName'
+      responses:
+        '200':
+          description: List of segments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SegmentList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
+  schemas:
+    SegmentList:
+      type: object
+      properties:
+        OFFLINE:
+          type: array
+          items:
+            type: string
+        REALTIME:
+          type: array
+          items:
+            type: string
+x-generated-from: documentation

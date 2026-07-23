@@ -1,0 +1,83 @@
+openapi: 3.0.3
+info:
+  title: Apache Pinot REST Cluster API
+  description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pinot.apache.org/
+servers:
+- url: https://{host}
+  variables:
+    host:
+      default: localhost:9000
+tags:
+- name: Cluster
+paths:
+  /cluster/info:
+    get:
+      operationId: getClusterInfo
+      summary: Apache Pinot Get Cluster Info
+      description: Get information about the Pinot cluster.
+      tags:
+      - Cluster
+      responses:
+        '200':
+          description: Cluster information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterInfo'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /instances:
+    get:
+      operationId: listInstances
+      summary: Apache Pinot List Instances
+      description: List all instances in the cluster.
+      tags:
+      - Cluster
+      responses:
+        '200':
+          description: List of instances
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstanceList'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    InstanceList:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            type: string
+          example:
+          - Broker_localhost_8099
+          - Server_localhost_8098
+    ClusterInfo:
+      type: object
+      properties:
+        clusterName:
+          type: string
+          example: PinotCluster
+        version:
+          type: string
+          example: 1.0.0
+        numOnlineControllers:
+          type: integer
+          example: 1
+        numOnlineBrokers:
+          type: integer
+          example: 2
+        numOnlineServers:
+          type: integer
+          example: 4
+x-generated-from: documentation

@@ -1,0 +1,141 @@
+openapi: 3.0.3
+info:
+  title: Apache Pinot REST Cluster Schemas API
+  description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pinot.apache.org/
+servers:
+- url: https://{host}
+  variables:
+    host:
+      default: localhost:9000
+tags:
+- name: Schemas
+paths:
+  /schemas:
+    get:
+      operationId: listSchemas
+      summary: Apache Pinot List Schemas
+      description: List all schemas registered in the cluster.
+      tags:
+      - Schemas
+      responses:
+        '200':
+          description: List of schema names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    post:
+      operationId: addSchema
+      summary: Apache Pinot Add Schema
+      description: Add a new schema to the cluster.
+      tags:
+      - Schemas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Schema'
+      responses:
+        '200':
+          description: Schema added
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /schemas/{schemaName}:
+    get:
+      operationId: getSchema
+      summary: Apache Pinot Get Schema
+      description: Get a specific schema by name.
+      tags:
+      - Schemas
+      parameters:
+      - name: schemaName
+        in: path
+        required: true
+        schema:
+          type: string
+        description: Schema name
+        example: my_schema
+      responses:
+        '200':
+          description: Schema definition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+    delete:
+      operationId: deleteSchema
+      summary: Apache Pinot Delete Schema
+      description: Delete a schema from the cluster.
+      tags:
+      - Schemas
+      parameters:
+      - name: schemaName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Schema deleted
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    FieldSpec:
+      type: object
+      properties:
+        name:
+          type: string
+          example: AirlineID
+        dataType:
+          type: string
+          enum:
+          - INT
+          - LONG
+          - FLOAT
+          - DOUBLE
+          - STRING
+          - BYTES
+          - BOOLEAN
+          - TIMESTAMP
+          - JSON
+          example: INT
+        notNull:
+          type: boolean
+          example: false
+    Schema:
+      type: object
+      properties:
+        schemaName:
+          type: string
+          example: airlineStats
+        dimensionFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+        metricFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+        dateTimeFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+x-generated-from: documentation

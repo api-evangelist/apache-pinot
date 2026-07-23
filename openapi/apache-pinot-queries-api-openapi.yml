@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: Apache Pinot REST Cluster Queries API
+  description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
+  version: 1.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    url: https://pinot.apache.org/
+servers:
+- url: https://{host}
+  variables:
+    host:
+      default: localhost:9000
+tags:
+- name: Queries
+paths:
+  /query/sql:
+    post:
+      operationId: querySql
+      summary: Apache Pinot Query SQL
+      description: Execute a SQL query against Pinot tables.
+      tags:
+      - Queries
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SqlQueryRequest'
+      responses:
+        '200':
+          description: Query results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SqlQueryResponse'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    DataSchema:
+      type: object
+      properties:
+        columnNames:
+          type: array
+          items:
+            type: string
+          example:
+          - count(*)
+        columnDataTypes:
+          type: array
+          items:
+            type: string
+          example:
+          - LONG
+    SqlQueryRequest:
+      type: object
+      required:
+      - sql
+      properties:
+        sql:
+          type: string
+          description: SQL query to execute
+          example: SELECT COUNT(*) FROM airlineStats WHERE Year = 2014
+        queryOptions:
+          type: string
+          description: Query options key=value pairs
+          example: timeoutMs=5000
+    SqlQueryResponse:
+      type: object
+      properties:
+        resultTable:
+          $ref: '#/components/schemas/ResultTable'
+        numDocsScanned:
+          type: integer
+          example: 1000
+        totalDocs:
+          type: integer
+          example: 10000
+        timeUsedMs:
+          type: integer
+          example: 45
+        numServersQueried:
+          type: integer
+          example: 4
+        numServersResponded:
+          type: integer
+          example: 4
+    ResultTable:
+      type: object
+      properties:
+        dataSchema:
+          $ref: '#/components/schemas/DataSchema'
+        rows:
+          type: array
+          items:
+            type: array
+            items: {}
+x-generated-from: documentation
