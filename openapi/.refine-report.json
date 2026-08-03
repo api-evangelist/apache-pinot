@@ -1,0 +1,22 @@
+{
+  "provider": "apache-pinot",
+  "sources": [
+    "apache-pinot-cluster-api-openapi.yml",
+    "apache-pinot-queries-api-openapi.yml",
+    "apache-pinot-schemas-api-openapi.yml",
+    "apache-pinot-segments-api-openapi.yml",
+    "apache-pinot-tables-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-pinot-cluster-api-openapi.yml",
+    "apache-pinot-queries-api-openapi.yml",
+    "apache-pinot-schemas-api-openapi.yml",
+    "apache-pinot-segments-api-openapi.yml",
+    "apache-pinot-tables-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
