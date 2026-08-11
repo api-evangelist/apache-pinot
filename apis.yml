@@ -42,16 +42,6 @@ apis:
     url: openapi/apache-pinot-cluster-api-openapi.yml
   - type: Documentation
     url: https://docs.pinot.apache.org/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-cluster.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-queries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-schemas.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-segments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tables.yaml
 - aid: apache-pinot:apache-pinot-queries-api
   name: Apache Pinot Queries API
   description: The Queries API from Apache Pinot — 1 operation(s) for queries.
@@ -63,16 +53,6 @@ apis:
     url: openapi/apache-pinot-queries-api-openapi.yml
   - type: Documentation
     url: https://docs.pinot.apache.org/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-cluster.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-queries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-schemas.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-segments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tables.yaml
 - aid: apache-pinot:apache-pinot-schemas-api
   name: Apache Pinot Schemas API
   description: The Schemas API from Apache Pinot — 2 operation(s) for schemas.
@@ -84,16 +64,6 @@ apis:
     url: openapi/apache-pinot-schemas-api-openapi.yml
   - type: Documentation
     url: https://docs.pinot.apache.org/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-cluster.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-queries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-schemas.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-segments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tables.yaml
 - aid: apache-pinot:apache-pinot-segments-api
   name: Apache Pinot Segments API
   description: The Segments API from Apache Pinot — 1 operation(s) for segments.
@@ -105,16 +75,6 @@ apis:
     url: openapi/apache-pinot-segments-api-openapi.yml
   - type: Documentation
     url: https://docs.pinot.apache.org/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-cluster.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-queries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-schemas.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-segments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tables.yaml
 - aid: apache-pinot:apache-pinot-tables-api
   name: Apache Pinot Tables API
   description: The Tables API from Apache Pinot — 2 operation(s) for tables.
@@ -126,16 +86,6 @@ apis:
     url: openapi/apache-pinot-tables-api-openapi.yml
   - type: Documentation
     url: https://docs.pinot.apache.org/
-  - type: X-NaftikoCapability
-    url: capabilities/rest-cluster.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-queries.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-schemas.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-segments.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/rest-tables.yaml
 maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
