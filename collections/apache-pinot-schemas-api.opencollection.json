@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Pinot REST Cluster Schemas API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Schemas",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Pinot List Schemas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/schemas"
+          },
+          "docs": "List all schemas registered in the cluster."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot Add Schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/schemas",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a new schema to the cluster."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot Get Schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/schemas/:schemaName",
+            "params": [
+              {
+                "name": "schemaName",
+                "value": "my_schema",
+                "type": "path",
+                "description": "Schema name"
+              }
+            ]
+          },
+          "docs": "Get a specific schema by name."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot Delete Schema",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/schemas/:schemaName",
+            "params": [
+              {
+                "name": "schemaName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a schema from the cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

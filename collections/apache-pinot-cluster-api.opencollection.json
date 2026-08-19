@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Pinot REST Cluster API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cluster",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Pinot Get Cluster Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/cluster/info"
+          },
+          "docs": "Get information about the Pinot cluster."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot List Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/instances"
+          },
+          "docs": "List all instances in the cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

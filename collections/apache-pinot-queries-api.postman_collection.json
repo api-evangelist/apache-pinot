@@ -1,0 +1,154 @@
+{
+  "item": [
+    {
+      "id": "8c3a7505-15b5-4b23-9a17-ecc6fe47af5e",
+      "name": "Queries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5189951a-5bd0-40a4-b939-5e0694596f31",
+          "name": "Apache Pinot Query SQL",
+          "request": {
+            "name": "Apache Pinot Query SQL",
+            "description": {
+              "content": "Execute a SQL query against Pinot tables.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "query",
+                "sql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"sql\": \"<string>\",\n  \"queryOptions\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d6d0d2a3-dbbb-4fce-b065-530efef9886b",
+              "name": "Query results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "query",
+                    "sql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sql\": \"SELECT COUNT(*) FROM airlineStats WHERE Year = 2014\",\n  \"queryOptions\": \"timeoutMs=5000\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"resultTable\": {\n    \"dataSchema\": {\n      \"columnNames\": [\n        \"count(*)\"\n      ],\n      \"columnDataTypes\": [\n        \"LONG\"\n      ]\n    },\n    \"rows\": [\n      [],\n      []\n    ]\n  },\n  \"numDocsScanned\": 1000,\n  \"totalDocs\": 10000,\n  \"timeUsedMs\": 45,\n  \"numServersQueried\": 4,\n  \"numServersResponded\": 4\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:9000",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d47db843-76e6-4eac-a957-e37833eaf187",
+    "name": "Apache Pinot REST Cluster Queries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.",
+      "type": "text/plain"
+    }
+  }
+}

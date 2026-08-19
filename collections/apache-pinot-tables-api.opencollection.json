@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Pinot REST Cluster Tables API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tables",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Pinot List Tables",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/tables"
+          },
+          "docs": "List all tables in the Pinot cluster."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot Create Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/tables",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new Pinot table with the specified configuration."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot Get Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/tables/:tableName",
+            "params": [
+              {
+                "name": "tableName",
+                "value": "airlineStats_OFFLINE",
+                "type": "path",
+                "description": "Table name"
+              }
+            ]
+          },
+          "docs": "Get the configuration of a specific table."
+        },
+        {
+          "info": {
+            "name": "Apache Pinot Delete Table",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/tables/:tableName",
+            "params": [
+              {
+                "name": "tableName",
+                "value": "airlineStats_OFFLINE",
+                "type": "path",
+                "description": "Table name"
+              }
+            ]
+          },
+          "docs": "Delete a table from the cluster."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

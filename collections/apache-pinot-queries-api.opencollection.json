@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Pinot REST Cluster Queries API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Queries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache Pinot Query SQL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/query/sql",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute a SQL query against Pinot tables."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

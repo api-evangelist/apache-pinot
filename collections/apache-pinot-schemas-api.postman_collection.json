@@ -1,0 +1,432 @@
+{
+  "item": [
+    {
+      "id": "ba8d3dec-7d03-46ab-8fde-6a7a42ea5edc",
+      "name": "Schemas",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d532eb33-4402-4f8f-9c92-559c92c4de39",
+          "name": "Apache Pinot List Schemas",
+          "request": {
+            "name": "Apache Pinot List Schemas",
+            "description": {
+              "content": "List all schemas registered in the cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schemas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52a1d4df-bdd1-4c99-8a66-376589d5271c",
+              "name": "List of schema names",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schemas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "783aa180-845a-46a9-84a3-dcef88717a24",
+          "name": "Apache Pinot Add Schema",
+          "request": {
+            "name": "Apache Pinot Add Schema",
+            "description": {
+              "content": "Add a new schema to the cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schemas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"schemaName\": \"<string>\",\n  \"dimensionFieldSpecs\": [\n    {\n      \"name\": \"<string>\",\n      \"dataType\": \"<string>\",\n      \"notNull\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"dataType\": \"<string>\",\n      \"notNull\": \"<boolean>\"\n    }\n  ],\n  \"metricFieldSpecs\": [\n    {\n      \"name\": \"<string>\",\n      \"dataType\": \"<string>\",\n      \"notNull\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"dataType\": \"<string>\",\n      \"notNull\": \"<boolean>\"\n    }\n  ],\n  \"dateTimeFieldSpecs\": [\n    {\n      \"name\": \"<string>\",\n      \"dataType\": \"<string>\",\n      \"notNull\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"dataType\": \"<string>\",\n      \"notNull\": \"<boolean>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e902d62-007c-4cd6-9806-3ec04cc5acb4",
+              "name": "Schema added",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schemas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"schemaName\": \"airlineStats\",\n  \"dimensionFieldSpecs\": [\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    },\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    }\n  ],\n  \"metricFieldSpecs\": [\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    },\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    }\n  ],\n  \"dateTimeFieldSpecs\": [\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    },\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0de053f9-570d-41b7-ab07-a03d4b8b491f",
+          "name": "Apache Pinot Get Schema",
+          "request": {
+            "name": "Apache Pinot Get Schema",
+            "description": {
+              "content": "Get a specific schema by name.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schemas",
+                ":schemaName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "schemaName",
+                  "description": "(Required) Schema name"
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36496dc2-b9cf-4120-be92-695b3e13384a",
+              "name": "Schema definition",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schemas",
+                    ":schemaName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "schemaName",
+                      "description": "(Required) Schema name"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"schemaName\": \"airlineStats\",\n  \"dimensionFieldSpecs\": [\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    },\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    }\n  ],\n  \"metricFieldSpecs\": [\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    },\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    }\n  ],\n  \"dateTimeFieldSpecs\": [\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    },\n    {\n      \"name\": \"AirlineID\",\n      \"dataType\": \"INT\",\n      \"notNull\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61857475-f947-47be-82c1-240dd1346b7d",
+          "name": "Apache Pinot Delete Schema",
+          "request": {
+            "name": "Apache Pinot Delete Schema",
+            "description": {
+              "content": "Delete a schema from the cluster.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "schemas",
+                ":schemaName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "schemaName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bcd3cf63-0c93-498a-a4b7-260e112a7acb",
+              "name": "Schema deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "schemas",
+                    ":schemaName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "schemaName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:9000",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d922f6c1-b4d4-4eba-a1df-3ff3b18ba31b",
+    "name": "Apache Pinot REST Cluster Schemas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.",
+      "type": "text/plain"
+    }
+  }
+}
