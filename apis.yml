@@ -25,6 +25,14 @@ tags:
 - OLAP
 - Real-Time
 - Apache
+- Open-Source
+tags_raw:
+- Analytics
+- Database
+- Low Latency
+- OLAP
+- Real-Time
+- Apache
 - Open Source
 created: '2026-03-16'
 modified: '2026-05-19'
@@ -47,6 +55,8 @@ apis:
   description: The Queries API from Apache Pinot — 1 operation(s) for queries.
   humanURL: https://docs.pinot.apache.org/
   tags:
+  - Query
+  tags_raw:
   - Queries
   properties:
   - type: OpenAPI
