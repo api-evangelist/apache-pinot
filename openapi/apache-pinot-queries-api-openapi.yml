@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache Pinot REST Cluster Queries API
   description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
@@ -41,6 +41,36 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    ResultTable:
+      type: object
+      properties:
+        dataSchema:
+          $ref: '#/components/schemas/DataSchema'
+        rows:
+          type: array
+          items:
+            type: array
+            items: {}
+    SqlQueryResponse:
+      type: object
+      properties:
+        resultTable:
+          $ref: '#/components/schemas/ResultTable'
+        numDocsScanned:
+          type: integer
+          example: 1000
+        totalDocs:
+          type: integer
+          example: 10000
+        timeUsedMs:
+          type: integer
+          example: 45
+        numServersQueried:
+          type: integer
+          example: 4
+        numServersResponded:
+          type: integer
+          example: 4
     DataSchema:
       type: object
       properties:
@@ -69,34 +99,4 @@ components:
           type: string
           description: Query options key=value pairs
           example: timeoutMs=5000
-    SqlQueryResponse:
-      type: object
-      properties:
-        resultTable:
-          $ref: '#/components/schemas/ResultTable'
-        numDocsScanned:
-          type: integer
-          example: 1000
-        totalDocs:
-          type: integer
-          example: 10000
-        timeUsedMs:
-          type: integer
-          example: 45
-        numServersQueried:
-          type: integer
-          example: 4
-        numServersResponded:
-          type: integer
-          example: 4
-    ResultTable:
-      type: object
-      properties:
-        dataSchema:
-          $ref: '#/components/schemas/DataSchema'
-        rows:
-          type: array
-          items:
-            type: array
-            items: {}
 x-generated-from: documentation
