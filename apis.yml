@@ -79,6 +79,8 @@ apis:
   description: The Schemas API from Apache Pinot — 2 operation(s) for schemas.
   humanURL: https://docs.pinot.apache.org/
   tags:
+  - Schema
+  tags_raw:
   - Schemas
   properties:
   - type: OpenAPI
