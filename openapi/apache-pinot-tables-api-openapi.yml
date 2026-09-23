@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apache Pinot REST Cluster Tables API
+  title: Apache Pinot REST Tables API
   description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
   version: 1.0.0
   license:
@@ -89,7 +89,25 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
   schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Table created successfully
     TableList:
       type: object
       properties:
@@ -100,15 +118,6 @@ components:
           example:
           - airlineStats_OFFLINE
           - baseballStats_OFFLINE
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          example: success
-        message:
-          type: string
-          example: Table created successfully
     TableConfig:
       type: object
       properties:
@@ -138,13 +147,4 @@ components:
             server:
               type: string
               example: DefaultTenant
-  parameters:
-    tableName:
-      name: tableName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Table name
-      example: airlineStats_OFFLINE
 x-generated-from: documentation

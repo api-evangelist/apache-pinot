@@ -1,11 +1,7 @@
 {
   "provider": "apache-pinot",
   "sources": [
-    "apache-pinot-cluster-api-openapi.yml",
-    "apache-pinot-queries-api-openapi.yml",
-    "apache-pinot-schemas-api-openapi.yml",
-    "apache-pinot-segments-api-openapi.yml",
-    "apache-pinot-tables-api-openapi.yml"
+    "_ae-authored/apache-pinot-rest-api.yaml"
   ],
   "outputs": [
     "apache-pinot-cluster-api-openapi.yml",
@@ -18,12 +14,20 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "apache-pinot-cluster-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pinot-queries-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pinot-schemas-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pinot-segments-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "apache-pinot-tables-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-pinot-rest-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apache-pinot-rest-api.yaml: declared missing tag: Cluster",
+    "apache-pinot-rest-api.yaml: declared missing tag: Queries",
+    "apache-pinot-rest-api.yaml: declared missing tag: Schemas",
+    "apache-pinot-rest-api.yaml: declared missing tag: Segments",
+    "apache-pinot-rest-api.yaml: declared missing tag: Tables",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "apache-pinot-cluster-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pinot-queries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pinot-schemas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pinot-segments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "apache-pinot-tables-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

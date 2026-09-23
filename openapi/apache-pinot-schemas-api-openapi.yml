@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Apache Pinot REST Cluster Schemas API
+  title: Apache Pinot REST Schemas API
   description: Apache Pinot is a real-time distributed OLAP datastore. The REST API provides endpoints for SQL queries, schema management, table management, segment management, and cluster administration.
   version: 1.0.0
   license:
@@ -98,24 +98,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Schema:
-      type: object
-      properties:
-        schemaName:
-          type: string
-          example: airlineStats
-        dimensionFieldSpecs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldSpec'
-        metricFieldSpecs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldSpec'
-        dateTimeFieldSpecs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FieldSpec'
     FieldSpec:
       type: object
       properties:
@@ -138,4 +120,22 @@ components:
         notNull:
           type: boolean
           example: false
+    Schema:
+      type: object
+      properties:
+        schemaName:
+          type: string
+          example: airlineStats
+        dimensionFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+        metricFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
+        dateTimeFieldSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FieldSpec'
 x-generated-from: documentation
