@@ -52,6 +52,16 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
+    InstanceList:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            type: string
+          example:
+          - Broker_localhost_8099
+          - Server_localhost_8098
     ClusterInfo:
       type: object
       properties:
@@ -70,14 +80,4 @@ components:
         numOnlineServers:
           type: integer
           example: 4
-    InstanceList:
-      type: object
-      properties:
-        instances:
-          type: array
-          items:
-            type: string
-          example:
-          - Broker_localhost_8099
-          - Server_localhost_8098
 x-generated-from: documentation

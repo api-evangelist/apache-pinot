@@ -89,35 +89,7 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    tableName:
-      name: tableName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Table name
-      example: airlineStats_OFFLINE
   schemas:
-    SuccessResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          example: success
-        message:
-          type: string
-          example: Table created successfully
-    TableList:
-      type: object
-      properties:
-        tables:
-          type: array
-          items:
-            type: string
-          example:
-          - airlineStats_OFFLINE
-          - baseballStats_OFFLINE
     TableConfig:
       type: object
       properties:
@@ -147,4 +119,32 @@ components:
             server:
               type: string
               example: DefaultTenant
+    TableList:
+      type: object
+      properties:
+        tables:
+          type: array
+          items:
+            type: string
+          example:
+          - airlineStats_OFFLINE
+          - baseballStats_OFFLINE
+    SuccessResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Table created successfully
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
 x-generated-from: documentation

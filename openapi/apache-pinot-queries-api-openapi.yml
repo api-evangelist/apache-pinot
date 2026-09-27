@@ -51,6 +51,21 @@ components:
           items:
             type: array
             items: {}
+    DataSchema:
+      type: object
+      properties:
+        columnNames:
+          type: array
+          items:
+            type: string
+          example:
+          - count(*)
+        columnDataTypes:
+          type: array
+          items:
+            type: string
+          example:
+          - LONG
     SqlQueryResponse:
       type: object
       properties:
@@ -71,21 +86,6 @@ components:
         numServersResponded:
           type: integer
           example: 4
-    DataSchema:
-      type: object
-      properties:
-        columnNames:
-          type: array
-          items:
-            type: string
-          example:
-          - count(*)
-        columnDataTypes:
-          type: array
-          items:
-            type: string
-          example:
-          - LONG
     SqlQueryRequest:
       type: object
       required:

@@ -39,7 +39,7 @@ tags:
 - OLAP
 - Real-Time
 - Apache
-- Open-Source
+- Open Source
 tags_raw:
 - Analytics
 - Database
@@ -48,6 +48,7 @@ tags_raw:
 - Real-Time
 - Apache
 - Open Source
+- Open-Source
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/apis.yml
