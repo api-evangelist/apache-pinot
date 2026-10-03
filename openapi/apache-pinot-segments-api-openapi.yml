@@ -36,15 +36,6 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  parameters:
-    tableName:
-      name: tableName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Table name
-      example: airlineStats_OFFLINE
   schemas:
     SegmentList:
       type: object
@@ -57,4 +48,13 @@ components:
           type: array
           items:
             type: string
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
 x-generated-from: documentation
