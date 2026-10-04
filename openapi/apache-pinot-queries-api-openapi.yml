@@ -54,6 +54,26 @@ components:
           type: string
           description: Query options key=value pairs
           example: timeoutMs=5000
+    SqlQueryResponse:
+      type: object
+      properties:
+        resultTable:
+          $ref: '#/components/schemas/ResultTable'
+        numDocsScanned:
+          type: integer
+          example: 1000
+        totalDocs:
+          type: integer
+          example: 10000
+        timeUsedMs:
+          type: integer
+          example: 45
+        numServersQueried:
+          type: integer
+          example: 4
+        numServersResponded:
+          type: integer
+          example: 4
     ResultTable:
       type: object
       properties:
@@ -79,24 +99,4 @@ components:
             type: string
           example:
           - LONG
-    SqlQueryResponse:
-      type: object
-      properties:
-        resultTable:
-          $ref: '#/components/schemas/ResultTable'
-        numDocsScanned:
-          type: integer
-          example: 1000
-        totalDocs:
-          type: integer
-          example: 10000
-        timeUsedMs:
-          type: integer
-          example: 45
-        numServersQueried:
-          type: integer
-          example: 4
-        numServersResponded:
-          type: integer
-          example: 4
 x-generated-from: documentation
