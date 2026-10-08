@@ -117,6 +117,12 @@ maintainers:
 - FN: Kin Lane
   email: info@apievangelist.com
 common:
+- type: Plans
+  url: plans/apache-pinot-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/apache-pinot-rate-limits.yml
+- type: FinOps
+  url: finops/apache-pinot-finops.yml
 - type: Website
   url: https://www.apache.org/
 - type: AgenticAccess
