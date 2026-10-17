@@ -89,17 +89,16 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
+  parameters:
+    tableName:
+      name: tableName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Table name
+      example: airlineStats_OFFLINE
   schemas:
-    TableList:
-      type: object
-      properties:
-        tables:
-          type: array
-          items:
-            type: string
-          example:
-          - airlineStats_OFFLINE
-          - baseballStats_OFFLINE
     TableConfig:
       type: object
       properties:
@@ -138,13 +137,14 @@ components:
         message:
           type: string
           example: Table created successfully
-  parameters:
-    tableName:
-      name: tableName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: Table name
-      example: airlineStats_OFFLINE
+    TableList:
+      type: object
+      properties:
+        tables:
+          type: array
+          items:
+            type: string
+          example:
+          - airlineStats_OFFLINE
+          - baseballStats_OFFLINE
 x-generated-from: documentation

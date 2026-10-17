@@ -41,19 +41,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    SqlQueryRequest:
-      type: object
-      required:
-      - sql
-      properties:
-        sql:
-          type: string
-          description: SQL query to execute
-          example: SELECT COUNT(*) FROM airlineStats WHERE Year = 2014
-        queryOptions:
-          type: string
-          description: Query options key=value pairs
-          example: timeoutMs=5000
     SqlQueryResponse:
       type: object
       properties:
@@ -74,16 +61,6 @@ components:
         numServersResponded:
           type: integer
           example: 4
-    ResultTable:
-      type: object
-      properties:
-        dataSchema:
-          $ref: '#/components/schemas/DataSchema'
-        rows:
-          type: array
-          items:
-            type: array
-            items: {}
     DataSchema:
       type: object
       properties:
@@ -99,4 +76,27 @@ components:
             type: string
           example:
           - LONG
+    SqlQueryRequest:
+      type: object
+      required:
+      - sql
+      properties:
+        sql:
+          type: string
+          description: SQL query to execute
+          example: SELECT COUNT(*) FROM airlineStats WHERE Year = 2014
+        queryOptions:
+          type: string
+          description: Query options key=value pairs
+          example: timeoutMs=5000
+    ResultTable:
+      type: object
+      properties:
+        dataSchema:
+          $ref: '#/components/schemas/DataSchema'
+        rows:
+          type: array
+          items:
+            type: array
+            items: {}
 x-generated-from: documentation
