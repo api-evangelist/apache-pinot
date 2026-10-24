@@ -1,9 +1,12 @@
 {
   "provider": "apache-pinot",
   "sources": [
+    "_original/apache-pinot-openapi.json",
     "_ae-authored/apache-pinot-rest-api.yaml"
   ],
   "outputs": [
+    "apache-pinot-queues-api-openapi.yml",
+    "apache-pinot-status-api-openapi.yml",
     "apache-pinot-cluster-api-openapi.yml",
     "apache-pinot-queries-api-openapi.yml",
     "apache-pinot-schemas-api-openapi.yml",
@@ -14,14 +17,15 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "apache-pinot-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
     "apache-pinot-rest-api.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apache-pinot-rest-api.yaml: declared missing tag: Cluster",
     "apache-pinot-rest-api.yaml: declared missing tag: Queries",
     "apache-pinot-rest-api.yaml: declared missing tag: Schemas",
     "apache-pinot-rest-api.yaml: declared missing tag: Segments",
     "apache-pinot-rest-api.yaml: declared missing tag: Tables",
-    "apis.yml register: already-registered"
+    "apis.yml register: written (+2 apis, 7 total)"
   ],
   "skipped": [
     "apache-pinot-cluster-api-openapi.yml: previously refined output, superseded by openapi/_original/",
