@@ -1,4 +1,4 @@
-# Apache Pinot (apache-pinot)
+# Apache Pinot
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,123 +66,192 @@
 
 Apache Pinot is a real-time distributed OLAP datastore designed to deliver scalable real-time analytics with low latency. It ingests data from batch and streaming sources and provides fast analytical queries for user-facing applications.
 
-**URL:** [https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apache-pinot/refs/heads/main/apis.yml)
+**Areas:** Analytics · Database · Low Latency · OLAP · Real-Time · Apache · Open Source
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache Pinot on APIs.io
 
-## Tags:
+Everything profiled for Apache Pinot is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-pinot/](https://apis.io/providers/apache-pinot/)** — or go straight to one of the APIs or properties below.
 
- - Analytics, Database, Low Latency, OLAP, Real-Time, Apache, Open Source
+### APIs (5)
 
-## Timestamps
+- [Apache Pinot Cluster API](https://apis.io/apis/apache-pinot/apache-pinot-cluster-api/) — The Cluster API from Apache Pinot — 2 operation(s) for cluster.
+- [Apache Pinot Queries API](https://apis.io/apis/apache-pinot/apache-pinot-queries-api/) — The Queries API from Apache Pinot — 1 operation(s) for queries.
+- [Apache Pinot Schemas API](https://apis.io/apis/apache-pinot/apache-pinot-schemas-api/) — The Schemas API from Apache Pinot — 2 operation(s) for schemas.
+- [Apache Pinot Segments API](https://apis.io/apis/apache-pinot/apache-pinot-segments-api/) — The Segments API from Apache Pinot — 1 operation(s) for segments.
+- [Apache Pinot Tables API](https://apis.io/apis/apache-pinot/apache-pinot-tables-api/) — The Tables API from Apache Pinot — 2 operation(s) for tables.
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache Pinot REST API
-The Pinot API provides REST endpoints for SQL queries, schema management, table management, segment management, cluster administration, and task management, along with a JDBC driver for SQL access.
+#### Agentic access (1)
 
-**Human URL:** [https://docs.pinot.apache.org/](https://docs.pinot.apache.org/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Pinot Agentic Access](https://apis.io/agentic-access/apache-pinot/apache-pinot-agentic-access/)
 
- - Analytics, OLAP, REST, SQL, Apache, Open Source
+#### JSON Schema (12)
 
-#### Properties
+The data models the API reads and writes.
 
+- [ClusterInfo](https://apis.io/schemas/apache-pinot/apache-pinot-cluster-info/)
+- [DataSchema](https://apis.io/schemas/apache-pinot/apache-pinot-data-schema/)
+- [FieldSpec](https://apis.io/schemas/apache-pinot/apache-pinot-field-spec/)
+- [InstanceList](https://apis.io/schemas/apache-pinot/apache-pinot-instance-list/)
+- [ResultTable](https://apis.io/schemas/apache-pinot/apache-pinot-result-table/)
+- [Schema](https://apis.io/schemas/apache-pinot/apache-pinot-schema/)
+- [SegmentList](https://apis.io/schemas/apache-pinot/apache-pinot-segment-list/)
+- [SqlQueryRequest](https://apis.io/schemas/apache-pinot/apache-pinot-sql-query-request/)
+- [SqlQueryResponse](https://apis.io/schemas/apache-pinot/apache-pinot-sql-query-response/)
+- [SuccessResponse](https://apis.io/schemas/apache-pinot/apache-pinot-success-response/)
+- [TableConfig](https://apis.io/schemas/apache-pinot/apache-pinot-table-config/)
+- [TableList](https://apis.io/schemas/apache-pinot/apache-pinot-table-list/)
+
+#### JSON Structure (12)
+
+Data models expressed in JSON Structure.
+
+- [Apache Pinot Cluster Info Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-cluster-info-structure/)
+- [Apache Pinot Data Schema Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-data-schema-structure/)
+- [Apache Pinot Field Spec Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-field-spec-structure/)
+- [Apache Pinot Instance List Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-instance-list-structure/)
+- [Apache Pinot Result Table Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-result-table-structure/)
+- [Apache Pinot Schema Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-schema-structure/)
+- [Apache Pinot Segment List Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-segment-list-structure/)
+- [Apache Pinot Sql Query Request Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-sql-query-request-structure/)
+- [Apache Pinot Sql Query Response Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-sql-query-response-structure/)
+- [Apache Pinot Success Response Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-success-response-structure/)
+- [Apache Pinot Table Config Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-table-config-structure/)
+- [Apache Pinot Table List Structure](https://apis.io/json-structure/apache-pinot/apache-pinot-table-list-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apache Pinot Context](https://apis.io/jsonld/apache-pinot/apache-pinot-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Pinot Vocabulary](https://apis.io/vocabularies/apache-pinot/apache-pinot-vocabulary/)
+
+#### Examples (12)
+
+Example requests and responses.
+
+- [Apache Pinot Cluster Info Example](https://apis.io/examples/apache-pinot/apache-pinot-cluster-info-example/)
+- [Apache Pinot Data Schema Example](https://apis.io/examples/apache-pinot/apache-pinot-data-schema-example/)
+- [Apache Pinot Field Spec Example](https://apis.io/examples/apache-pinot/apache-pinot-field-spec-example/)
+- [Apache Pinot Instance List Example](https://apis.io/examples/apache-pinot/apache-pinot-instance-list-example/)
+- [Apache Pinot Result Table Example](https://apis.io/examples/apache-pinot/apache-pinot-result-table-example/)
+- [Apache Pinot Schema Example](https://apis.io/examples/apache-pinot/apache-pinot-schema-example/)
+- [Apache Pinot Segment List Example](https://apis.io/examples/apache-pinot/apache-pinot-segment-list-example/)
+- [Apache Pinot Sql Query Request Example](https://apis.io/examples/apache-pinot/apache-pinot-sql-query-request-example/)
+- [Apache Pinot Sql Query Response Example](https://apis.io/examples/apache-pinot/apache-pinot-sql-query-response-example/)
+- [Apache Pinot Success Response Example](https://apis.io/examples/apache-pinot/apache-pinot-success-response-example/)
+- [Apache Pinot Table Config Example](https://apis.io/examples/apache-pinot/apache-pinot-table-config-example/)
+- [Apache Pinot Table List Example](https://apis.io/examples/apache-pinot/apache-pinot-table-list-example/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Apache Pinot REST Cluster API](https://apis.io/collections/apache-pinot/open-apache-pinot-cluster-api/)
+- [Apache Pinot REST Cluster Queries API](https://apis.io/collections/apache-pinot/open-apache-pinot-queries-api/)
+- [Apache Pinot REST Cluster Schemas API](https://apis.io/collections/apache-pinot/open-apache-pinot-schemas-api/)
+- [Apache Pinot REST Cluster Segments API](https://apis.io/collections/apache-pinot/open-apache-pinot-segments-api/)
+- [Apache Pinot REST Cluster Tables API](https://apis.io/collections/apache-pinot/open-apache-pinot-tables-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache Pinot — jsonschema rules](https://apis.io/rules/apache-pinot/apache-pinot-jsonschema-spectral-rules/)
+- [Apache Pinot API Rules](https://apis.io/rules/apache-pinot/apache-pinot-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Pinot Domain Security](https://apis.io/security/apache-pinot/apache-pinot-domain-security/)
+- [Apache Pinot Vulnerability Disclosure](https://apis.io/security/apache-pinot/apache-pinot-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Pinot Plans Pricing](https://apis.io/plans/apache-pinot/apache-pinot-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Pinot Rate Limits](https://apis.io/rate-limits/apache-pinot/apache-pinot-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Pinot Finops](https://apis.io/finops/apache-pinot/apache-pinot-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://docs.pinot.apache.org/)
-- [OpenAPI](openapi/apache-pinot-rest-api.yaml)
+- [GitHub](https://github.com/apache/pinot)
 
-## Common Properties
+## API Evangelist rating
 
-- [GitHubOrganization](https://github.com/apache/pinot)
-- [Documentation](https://docs.pinot.apache.org/)
-- [SpectralRules](rules/apache-pinot-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-pinot-vocabulary.yaml)
-- [NaftikoCapability](capabilities/pinot-workflow.yaml)
-- [JSON-LD](json-ld/apache-pinot-context.jsonld)
+**Kin Score 19.4** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Features
+| Facet | Score |
+|---|---|
+| Discoverability | 69.6 |
+| Contract quality | 19.1 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 9.5 |
+| Access clarity | 7.9 |
 
-| Name | Description |
-|------|-------------|
-| Real-Time OLAP | Sub-second analytical queries over real-time and historical data |
-| SQL Support | Standard SQL query interface with Pinot-specific extensions |
-| Streaming Ingestion | Real-time data ingestion from Kafka, Kinesis, and Pulsar |
-| Batch Ingestion | Offline data ingestion from HDFS, S3, GCS, and local files |
-| Columnar Storage | Column-oriented storage with bitmap indexing for fast queries |
-| Multi-Tenancy | Tenant isolation for broker and server resources |
-| Star-Tree Index | Pre-aggregated star-tree index for metric rollup queries |
+**Agent readiness 17.9** — agent-aware
 
-## Use Cases
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| User-Facing Analytics | Power user-facing dashboards like LinkedIn Who Viewed Profile |
-| Real-Time Dashboards | Business intelligence dashboards over streaming data |
-| Anomaly Detection | Real-time anomaly detection over metric time series |
-| A/B Testing | Real-time experiment analysis and statistical significance |
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
 
-## Integrations
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-pinot/](https://apis.io/providers/apache-pinot/).
 
-| Name | Description |
-|------|-------------|
-| Apache Kafka | Real-time stream ingestion from Kafka topics |
-| Apache Flink | Flink connector for streaming data into Pinot |
-| Apache Superset | Visual analytics and dashboards via SQL |
-| Presto/Trino | Federated query access to Pinot via Presto connector |
-| Grafana | Grafana data source plugin for Pinot metrics |
+## How this profile is made
 
-## Artifacts
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-Machine-readable API specifications organized by format.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Pinot: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### OpenAPI
+## Open an issue
 
-- [Apache Pinot REST API](openapi/apache-pinot-rest-api.yaml)
-
-### JSON Schema
-
-- [SQL Query Request](json-schema/apache-pinot-sql-query-request-schema.json)
-- [SQL Query Response](json-schema/apache-pinot-sql-query-response-schema.json)
-- [Table Config](json-schema/apache-pinot-table-config-schema.json)
-- [Schema](json-schema/apache-pinot-schema-schema.json)
-- [And more...](json-schema/)
-
-### JSON Structure
-
-- [Apache Pinot JSON Structures](json-structure/)
-
-### JSON-LD
-
-- [Apache Pinot Context](json-ld/apache-pinot-context.jsonld)
-
-### Examples
-
-- [Apache Pinot Examples](examples/)
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Analytics Workflow](capabilities/pinot-workflow.yaml) | Apache Pinot | 8 | Data Analyst, Platform Engineer |
-
-## Vocabulary
-
-- [Apache Pinot Vocabulary](vocabulary/apache-pinot-vocabulary.yaml) — Unified taxonomy mapping OLAP analytics resources, actions, workflows, and personas
-
-## Rules
-
-- [Apache Pinot Spectral Rules](rules/apache-pinot-spectral-rules.yml) — Rules enforcing Apache Pinot API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-pinot/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
